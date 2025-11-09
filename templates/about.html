@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Learn about the Riding Club of Barrington Hills - our mission, community, and commitment to trail riding.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-sage py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-7">
+        <h1 class="text-4xl text-heading font-bold text-charcoal" style="font-family: figtree;">ABOUT US</h1>
+        <p class="text-xl mt-2 text-forest" style="font-family: Georgia;">Preserving the tradition of neighbors riding to visit neighbors</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-8 bg-website">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Mission Statement -->
+            <div>
+                <h2 class="text-3xl font-bold text-charcoal mb-6" style="font-family: figtree;">Our Mission</h2>
+                <p class="text-lg text-forest mb-4" style="font-family: Georgia;">
+                    We are an all-volunteer 501(c)7 (social non-profit organization) riding organization formed by 1937. The Club seeks to maintain the old tradition of neighbors riding to visit neighbors, and is dedicated to preserving, expanding, and riding the bridle paths in Barrington Hills, Illinois.
+                    <br><br>
+                    The bridle paths have been developed by the RCBH through the generosity and cooperation of the landowners of Barrington Hills and the Forest Preserve District of Cook County. The paths are maintained by the RCBH. Trails located outside the Forest Preserve are for the exclusive use of RCBH members and guests.
+                    <br><br>
+                    We are dedicated to preserving the equestrian traditions of Barrington Hills, which in turn helps to protect our town's five acre minimum zoning, open spaces, and availability of a variety of facilities to care for neighbors horses
+                    <br><br>
+                    The Club's purpose is to serve as stewards of the bridle path system; to create and maintain interest in horseback riding and preserve equestrian traditions in the Barrington Hills countryside; to obtain the best possible facilities for trail riding on private trails in Barrington Hills and on public trails on county-owned property; to foster social interaction and to work for the benefit and pleasure of all who ride horseback and enjoy horses
+                </p>
+                
+                <!-- Club History -->
+                <div class="bg-website p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-charcoal mb-2" style="font-family: figtree;">Our History</h3>
+                    <p class="text-forest" style="font-family: Georgia;">
+                        For almost a century, the Barrington Hills area has had a rich equestrian history. More than seventy-five years ago, the Riding Club of Barrington Hills was formed as a volunteer organization of “neighbors riding to meet neighbors” who committed to ensuring Barrington Hills’ tradition as an equestrian community with preserved riding paths, facilities to care for horses, and open space. By doing this, the club which is older than the Village itself, protects the beauty and serenity of Barrington Hills.
+                        <br><br>
+                        The First President of the Riding Club of Barrington Hills was Alexander Reichmann, who moved to the Barrington Area in the early 1920s and settled on a 120-acre farm named Oakdene. While the farm is long gone, the home he built is still in use today on Oakdene Road. In Reichmann’s autobiography, he recalls the area, much as residents see it today.
+                        <br><br>
+                        “The open rolling country around Barrington was an invitation to the enjoyment of horseback riding, and a group of the earlier residents who were interested in that form of recreation organized the Riding Club of Barrington Hills and laid out a system of bridle paths that enabled one to enjoy the beauty of this countryside from the back of a horse.”
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Club Values -->
+            <div>
+                <h2 class="text-3xl font-bold text-charcoal mb-6" style="font-family: figtree;">Our Values</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-wheat rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: figtree;">Community</h3>
+                            <p class="text-forest" style="font-family: Georgia;">Building lasting friendships and supporting each other in our shared passion for riding. We believe that great riders are made through great communities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-wheat rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: figtree;">Adventure</h3>
+                            <p class="text-forest" style="font-family: Georgia;">Embracing new challenges and exploring the beauty of nature through trail riding. Every trail offers a new adventure and learning opportunity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-wheat rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: figtree;">Education</h3>
+                            <p class="text-forest" style="font-family: Georgia;">Promoting safe riding practices and continuous learning for all skill levels. Knowledge sharing is at the heart of our community.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-wheat rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: figtree;">Safety</h3>
+                            <p class="text-forest" style="font-family: Georgia;">Ensuring the safety of all members, horses, and trail users through education, proper equipment, and responsible riding practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-wheat rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2" style="font-family: figtree;">Stewardship</h3>
+                            <p class="text-forest" style="font-family: Georgia;">Caring for our trails, environment, and equine partners. We are committed to preserving the natural beauty of our riding areas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="py-8 bg-website">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: figtree;">What We Do</h2>
+            <p class="text-xl text-forest" style="font-family: Georgia;">Our activities and programs support riders of all levels</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Trail Maintenance -->
+            <div class="text-center p-6 rounded-lg bg-white shadow-md">
+                <div class="w-16 h-16 bg-wheat rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="font-family: figtree;">Trail Maintenance</h3>
+                <p class="text-forest text-sm" style="font-family: Georgia;">Regular maintenance and improvement of our trail network</p>
+            </div>
+            
+            <!-- Safety Education -->
+            <div class="text-center p-6 rounded-lg bg-white shadow-md">
+                <div class="w-16 h-16 bg-wheat rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="font-family: figtree;">Safety Education</h3>
+                <p class="text-forest text-sm" style="font-family: Georgia;">Workshops and training for safe riding practices</p>
+            </div>
+            
+            <!-- Community Events -->
+            <div class="text-center p-6 rounded-lg bg-white shadow-md">
+                <div class="w-16 h-16 bg-wheat rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="font-family: figtree;">Community Events</h3>
+                <p class="text-forest text-sm" style="font-family: Georgia;">Social gatherings, rides, and special celebrations</p>
+            </div>
+            
+            <!-- Youth Programs -->
+            <div class="text-center p-6 rounded-lg bg-white shadow-md">
+                <div class="w-16 h-16 bg-wheat rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold mb-2" style="font-family: figtree;">Youth Programs</h3>
+                <p class="text-forest text-sm" style="font-family: Georgia;">Special programs for young riders and families</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

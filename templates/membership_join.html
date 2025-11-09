@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Join RCBH - Membership Form{% endblock %}
+
+{% block content %}
+<section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Join the Riding Club of Barrington Hills</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="mb-6 space-y-2">
+            {% for category, message in messages %}
+            <div class="px-4 py-3 rounded {{ 'bg-red-100 text-red-800' if category == 'error' else 'bg-green-100 text-green-800' }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <form method="post" class="space-y-6">
+            <div class="w-full max-w-2xl bg-white shadow-md rounded-lg">
+                <!-- Tabs -->
+                <div class="flex border-b border-orange-200">
+                  <button class="tab-button flex-1 py-3 text-center font-medium text-orange-700 border-b-2 border-orange-600" data-tab="tab1">
+                    1. Bridle Path Guidelines
+                  </button>
+                  <button class="tab-button flex-1 py-3 text-center font-medium text-orange-700 hover:text-orange-900" data-tab="tab2">
+                    2. Form
+                  </button>
+                  <button class="tab-button flex-1 py-3 text-center font-medium text-orange-700 hover:text-orange-900" data-tab="tab3">
+                    3. Application Fee
+                  </button>
+                </div>
+                <div class="p-6">
+                    <div id="tab1" class="tab-content active bg-gray-100">
+                      <h2 class="text-xl font-bold text-orange-700 mb-2">RCBH Bridle Path Rules Certification</h2>
+                      <p class="text-gray-700" mb-2>
+                        The bridle paths include both public trails on county-owned property and private trails in Barrington Hills. Over 150 miles of these paths are maintained by the Riding Club of Barrington Hills. Everyone with a Forest Preserve of Cook County tag for their horse and license for the rider can take advantage of the public trails maintained by the Riding Club of Barrington Hills in the Cook County Forest Preserves. Trails located outside the Forest Preserve are for the exclusive use of Riding Club of Barrington Hills members and guests by stipulation of the land owners where these trails are located
+                        <br><br>
+                      </p>
+                      <p class="text-gray-700" mb-2>
+                        RCBH TRAILS ON PRIVATE PROPERTY – When the Riding Club of Barrington Hills (RCBH) was established in 1937, an informal agreement was entered into by neighbors, whereby mounted members of the Riding Club could traverse the landowners’ properties on horseback. Almost 80 years later, that relationship still exists. Our relationship, by its very nature, is a delicate one, we therefore ask you to follow the bridle path rules, to ensure that our system will continue to be viable.
+                        <br><br>
+                      </p>
+                      <ol>
+                        <li>1. Riders must be current RCBH members in order to ride on the private trails, however RCBH members may bring a guest when they ride. The host club member is responsible for ensuring that their guest has signed the required waiver form before riding. Waiver can be found in the directory and is also available on our website https://ridingclubofbarringtonhills.org/online-waiver/</li>
+                        <li>2. Follow the RCBH bridle path markers, always stay on marked trail, be respectful of the trails and don’t ride if conditions would cause damage or leave hoof prints on the lawn. Don’t litter and where possible consider picking up manure after you ride.</li>
+                        <li>3. Current RCBH bridle tags must be displayed at all times when riding on private trails.</li>
+                        <li>4. Private bridle trails are for mounted riders only, no dogs, motorized vehicles or pedestrians allowed.</li>
+                        <li>5. If you open a gate, close it.</li>
+                        <li>6. Private trails are walk only.</li>
+                      </ol>
+                      <BR>
+                      <h2 class="text-xl font-bold text-orange-700 mb-2">RCBH TRAILS ON PUBLIC PROPERTY</h2>
+                      <p class="text-gray-700" mb-2>
+                        The Riding Club of Barrington Hills maintains 65+ miles of trails within the Forest Preserve District of Cook County (FPDCC) properties. These are multi-use trails. Riding on FPDCC trails is by permit only: to obtain these permits, please go to their website at https://fpdcc.com/things-to-do/equestrian/. Rules for riding in the FPDCC are available on their website at https://fpdcc.com/about/rules-regulations/.
+                        <br><br>
+                      </p>
+                      <p class="text-gray-700" mb-2>
+                        IF YOU ARE UNABLE TO CLEAR A PATH YOURSELF, PLEASE REPORT BLOCKED TRAIL TO THE TRAIL REP IN YOUR SECTOR.
+                      </p>
+                      <BR>
+                      <p class="text-gray-700" mb-2>
+                        TRAIL REPS ARE LISTED IN THE RCBH DIRECTORY AND ON OUR WEBSITE UNDER TRAILS.
+                      </p>
+                      <div class=" mx-4">
+                        <label class="block text-sm font-medium text-gray-700">Applicant Name</label>
+                        <input type="text" name="applicant_name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                      </div>
+                      <div class=" mx-4">
+                        <label class="block text-sm font-medium text-gray-700">Applicant EMail</label>
+                        <input type="text" name="applicant_email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                      </div>
+                      <div class=" mx-4">
+                        <label class="block text-sm font-medium text-gray-700">Sponsor Name</label>
+                        <input type="text" name="Sponsor Name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                      </div>
+                      <div class=" mx-4">
+                        <label class="block text-sm font-medium text-gray-700">Sponsor EMail</label>
+                        <input type="text" name="sponsor_email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                      </div>
+                      <br>
+        
+                    </div>
+              
+                    <div id="tab2" class="tab-content">
+                        <h2 class="text-xl font-bold text-orange-700 mb-2">Tab 2 Information</h2>
+                        <p class="text-lg text-gray-600 mx-4">
+                            Applicants must have the recommendation of two (2) Club Members (“Sponsors”) residing in Barrington Hills. 
+                            <BR><BR>
+                        </p>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">First Sponsor Name</label>
+                            <input type="text" name="first_sponsor_name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">First Sponsor E-Mail</label>
+                            <input type="text" name="first_sponsor_email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">Second Sponsor Name</label>
+                            <input type="text" name="second_sponsor_name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">Second Sponsor Email</label>
+                            <input type="text" name="second_sponsor_name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <p class="text-lg text-gray-600 mx-4">
+                            Please read Bridle Path Rules on this <a class="text-blue-500" href="/bridle-path-certification">page</a>
+                            <BR><BR>
+                        </p>
+                        <p class="text-lg text-gray-600 mx-4">
+                            Knowledge of Bridle Path Rules is a condition of membership. Both of the Applicant’s Sponsors shall assess applicant’s knowledge of, and responsibility for Private Bridle Path Rules. Once both Sponsors have determined that the Applicant has sufficient knowledge of Bridle Path Rules to proceed as a Club Member, the Applicant and both Sponsors shall sign The Private Bridle Path Rule Agreement. 
+                            <BR><BR>
+                        </p>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">Type your full name below to certify that you have knowledge of and will follow the Bridle Path Rules.</label>
+                            <input type="text" name="certify_name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <p class="text-lg text-gray-600 mx-4">
+                            <BR>
+                            Additional Information:
+                            <BR><BR>
+                        </p>
+                        <div class="mx-4">
+                            <label class="block text-sm font-medium text-gray-700">1. Are you a resident of Barrington Hills or within hacking distance of the riding trail system?</label>
+                            <select name="has_horses" class="p-2 border rounded">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="mx-4">
+                            <label class="block text-sm font-medium text-gray-700">2. Is your horse stabled in Barrington Hills?</label>
+                            <select name="is_boarded" class="p-2 border rounded">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="mx-4">
+                            <label class="block text-sm font-medium text-gray-700">3. Are you a member of the FRV Hunt?</label>
+                            <select name="is_frv_hunt" class="p-2 border rounded">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="mx-4">
+                            <label class="block text-sm font-medium">4. Are you a member of the FRV Pony Club?</label>
+                            <select name="is_frv_pony" class="p-2 border rounded">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">5. How many horses/equine do you own? </label>
+                            <input type="text" name="horses_owned" value="{{ (form.certify_name if form else '')|e }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">6. Breeds or types of horses/equine you own?</label>
+                            <input type="text" name="horses_breeds" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">Last Name (Required)</label>
+                            <input type="text" name="last_name" class="mt-1 block rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">First Name (Required)</label>
+                            <input type="text" name="first_name" class="mt-1 block rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                        <div class=" mx-4">
+                            <label class="block text-sm font-medium text-gray-700">Significant Other Name</label>
+                            <input type="text" name="signicant_other_name" class="mt-1 block rounded-md border-gray-300 shadow-sm focus:border-warm-500 focus:ring-warm-500" required>
+                        </div>
+                    </div>
+              
+                    <div id="tab3" class="tab-content">
+                      <h2 class="text-xl font-bold text-orange-700 mb-2">Tab 3 Insights</h2>
+                      <p class="text-gray-700">This is where the third tab’s content goes. Keep it clean and simple.</p>
+                    </div>
+                  </div>
+                </div>
+                
+            <div class="bg-gray-100">
+
+
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full md:w-auto bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Submit Application</button>
+                    <a href="{{ url_for('membership') }}" class="ml-3 inline-block text-warm-700 hover:text-warm-900">Back to Membership</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</section>
+{% endblock %}
+
+

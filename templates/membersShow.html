@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Trails - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Explore the beautiful trails around Barrington Hills with the Riding Club. Discover our favorite riding routes and trail information.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-warm-700 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-7">
+        <h1 class="text-4xl font-bold">Trails</h1>
+        <p class="text-xl mt-2 text-warm-100">Discover beautiful riding trails in and around Barrington Hills</p>
+    </div>
+</section>
+
+<section class="py-16 bg-white">
+    <table id="userTable" class="display w-full">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+          <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</section>
+{% endblock %}

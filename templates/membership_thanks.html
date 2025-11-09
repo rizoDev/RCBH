@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You - Membership Submitted{% endblock %}
+
+{% block content %}
+<section class="py-24 bg-warm-100">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-white p-10 rounded-xl shadow">
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">Thank You!</h1>
+            <p class="text-lg text-gray-700 mb-6">Your membership application has been received. We will contact you shortly with next steps.</p>
+            <a href="{{ url_for('home') }}" class="inline-block bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Return Home</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+

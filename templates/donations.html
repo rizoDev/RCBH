@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Donations - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Support the Riding Club of Barrington Hills. Your donations help maintain trails, fund events, and support our community programs.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-warm-700 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl text-heading font-bold">DONATIONS</h1>
+        <p class="text-xl mt-4 text-warm-100">Support our trail maintenance and community programs</p>
+    </div>
+</section>
+
+<!-- Donation Impact -->
+<section class="py-16 bg-warm-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Your Impact</h2>
+            <p class="text-xl text-gray-600">See how your donations help our community thrive</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Impact 1 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Trail Maintenance</h3>
+                <p class="text-gray-600">Keep our trails safe and accessible for all riders</p>
+            </div>
+            
+            <!-- Impact 2 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Education Programs</h3>
+                <p class="text-gray-600">Support safety workshops and riding instruction</p>
+            </div>
+            
+            <!-- Impact 3 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Community Events</h3>
+                <p class="text-gray-600">Fund social gatherings and special activities</p>
+            </div>
+            
+            <!-- Impact 4 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Equipment & Tools</h3>
+                <p class="text-gray-600">Purchase trail maintenance equipment and safety gear</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Options -->
+<section class="py-16 bg-warm-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Donation Options</h2>
+            <p class="text-xl text-gray-600">Choose how you'd like to support our community</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- One-time Donation -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">One-Time Donation</h3>
+                <p class="text-gray-600 mb-6">Make a single donation to support our current needs</p>
+                <div class="space-y-3 mb-8">
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        $25
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        $50
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        $100
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Custom Amount
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Monthly Support -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center border-2 border-warm-600 relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span class="bg-warm-600 text-white px-4 py-2 rounded-full text-sm font-semibold">Recommended</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Monthly Support</h3>
+                <p class="text-gray-600 mb-6">Provide ongoing support with monthly recurring donations</p>
+                <div class="space-y-3 mb-8">
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        $10/month
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        $25/month
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        $50/month
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Custom Amount
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Specific Projects -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Specific Projects</h3>
+                <p class="text-gray-600 mb-6">Support specific initiatives that matter to you</p>
+                <div class="space-y-3 mb-8">
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Trail Bridge Repair
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Safety Equipment Fund
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Youth Programs
+                    </button>
+                    <button class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Emergency Fund
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PayPal Integration Note -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Secure Donations</h2>
+        <p class="text-xl text-gray-600 mb-8">
+            PayPal payment processing will be integrated in Phase 5 for secure, easy donations.
+            All donations are tax-deductible.
+        </p>
+        <div class="bg-warm-50 p-8 rounded-lg max-w-2xl mx-auto">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Current Donation Methods</h3>
+            <div class="space-y-3 text-gray-600">
+                <p><strong>Mail:</strong> Send check to RCBH, 123 Trail Road, Barrington Hills, IL 60010</p>
+                <p><strong>Email:</strong> donations@rcbh.org for payment instructions</p>
+                <p><strong>Phone:</strong> (847) 555-0123 to discuss large donations</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

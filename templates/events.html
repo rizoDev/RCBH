@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Events - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Discover exciting events and activities with the Riding Club of Barrington Hills. From trail rides to educational workshops.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-warm-700 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl text-heading font-bold">EVENTS</h1>
+        <p class="text-xl mt-4 text-warm-100">Join us for exciting activities and educational programs</p>
+    </div>
+</section>
+
+<!-- Events Content -->
+<section class="py-16 bg-warm-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Events</h2>
+            <p class="text-xl text-gray-600">Something for every rider and skill level</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Regular Events -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Regular Activities</h3>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-warm-600 pl-6">
+                        <h4 class="text-lg font-semibold text-gray-900">Monthly Group Rides</h4>
+                        <p class="text-gray-600">Join us for our monthly group rides through different trails. All skill levels welcome.</p>
+                    </div>
+                    <div class="border-l-4 border-warm-600 pl-6">
+                        <h4 class="text-lg font-semibold text-gray-900">Beginner's Sessions</h4>
+                        <p class="text-gray-600">Perfect for new riders to learn the basics in a supportive environment.</p>
+                    </div>
+                    <div class="border-l-4 border-warm-600 pl-6">
+                        <h4 class="text-lg font-semibold text-gray-900">Advanced Challenges</h4>
+                        <p class="text-gray-600">Push your limits on challenging terrain with experienced riders.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Events -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Special Events</h3>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-warm-600 pl-6">
+                        <h4 class="text-lg font-semibold text-gray-900">Trail Safety Workshops</h4>
+                        <p class="text-gray-600">Learn essential safety practices and trail etiquette from certified instructors.</p>
+                    </div>
+                    <div class="border-l-4 border-warm-600 pl-6">
+                        <h4 class="text-lg font-semibold text-gray-900">Seasonal Celebrations</h4>
+                        <p class="text-gray-600">Join us for special events celebrating the changing seasons.</p>
+                    </div>
+                    <div class="border-l-4 border-warm-600 pl-6">
+                        <h4 class="text-lg font-semibold text-gray-900">Community Service</h4>
+                        <p class="text-gray-600">Give back through trail maintenance and community outreach programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Event Registration -->
+<section class="py-16 bg-warm-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Join Our Events</h2>
+        <p class="text-xl text-gray-600 mb-8">Ready to participate? Become a member to access all our events</p>
+        <a href="{{ url_for('membership') }}" 
+           class="bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+            Become a Member
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}RCBH Calendar - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Interactive calendar for managing RCBH events, trail rides, and activities.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-warm-700 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl text-heading font-bold text-charcoal" style="font-family: figtree;">RCBH CALENDAR</h1>
+        <p class="text-xl mt-4 text-forest">Interactive calendar for events and activities</p>
+    </div>
+</section>
+
+<!-- Calendar Interface -->
+<section class="py-8 bg-website">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Calendar Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-4">
+                    <button id="prevMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <h2 id="currentMonth" class="text-2xl font-bold text-charcoal" style="font-family: figtree;"></h2>
+                    <button id="nextMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button id="addEventBtn" class="bg-wheat text-white px-6 py-2 rounded-lg hover:bg-wheat-600 transition-colors font-medium">
+                    + Add Event
+                </button>
+            </div>
+            
+            <!-- Calendar Grid -->
+            <div class="calendar-grid">
+                <!-- Days of week header -->
+                <div class="calendar-header">
+                    <div class="calendar-day-header">Sun</div>
+                    <div class="calendar-day-header">Mon</div>
+                    <div class="calendar-day-header">Tue</div>
+                    <div class="calendar-day-header">Wed</div>
+                    <div class="calendar-day-header">Thu</div>
+                    <div class="calendar-day-header">Fri</div>
+                    <div class="calendar-day-header">Sat</div>
+                </div>
+                
+                <!-- Calendar days -->
+                <div id="calendarDays" class="calendar-days">
+                    <!-- Days will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Event Modal -->
+<div id="eventModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 id="modalTitle" class="text-xl font-bold text-charcoal" style="font-family: figtree;">Add Event</h3>
+                <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <form id="eventForm">
+                <input type="hidden" id="eventId" value="">
+                
+                <div class="mb-4">
+                    <label for="eventTitle" class="block text-sm font-medium text-gray-700 mb-2">Event Title</label>
+                    <input type="text" id="eventTitle" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-wheat focus:border-transparent">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="eventDate" class="block text-sm font-medium text-gray-700 mb-2">Date</label>
+                    <input type="date" id="eventDate" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-wheat focus:border-transparent">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="startTime" class="block text-sm font-medium text-gray-700 mb-2">Start Time</label>
+                        <input type="time" id="startTime" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-wheat focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="endTime" class="block text-sm font-medium text-gray-700 mb-2">End Time</label>
+                        <input type="time" id="endTime" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-wheat focus:border-transparent">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="eventDescription" class="block text-sm font-medium text-gray-700 mb-2">Description (Optional)</label>
+                    <textarea id="eventDescription" rows="3" 
+                              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-wheat focus:border-transparent"></textarea>
+                </div>
+                
+                <div class="flex space-x-3">
+                    <button type="submit" class="flex-1 bg-wheat text-white py-2 px-4 rounded-md hover:bg-wheat-600 transition-colors font-medium">
+                        Save Event
+                    </button>
+                    <button type="button" id="deleteEventBtn" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors font-medium hidden">
+                        Delete
+                    </button>
+                    <button type="button" id="cancelBtn" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors font-medium">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Event Details Modal -->
+<div id="eventDetailsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-charcoal" style="font-family: figtree;">Event Details</h3>
+                <button id="closeDetailsModal" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="eventDetails">
+                <!-- Event details will be populated by JavaScript -->
+            </div>
+            
+            <div class="flex space-x-3 mt-6">
+                <button id="editEventBtn" class="flex-1 bg-wheat text-white py-2 px-4 rounded-md hover:bg-wheat-600 transition-colors font-medium">
+                    Edit
+                </button>
+                <button id="deleteEventFromDetailsBtn" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors font-medium">
+                    Delete
+                </button>
+                <button id="closeDetailsBtn" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors font-medium">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/rcbhcalendar.js') }}"></script>
+{% endblock %}

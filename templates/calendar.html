@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}Calendar - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}View upcoming events, trail rides, and activities with the Riding Club of Barrington Hills.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-warm-700 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl text-heading font-bold text-charcoal" style="font-family: figtree;">CALENDAR</h1>
+        <p class="text-xl mt-4 text-forest">Upcoming events, rides, and activities</p>
+    </div>
+</section>
+
+<!-- Calendar Placeholder -->
+<section class="py-8 bg-website">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-charcoal mb-4" style="font-family: figtree;">Upcoming Events</h2>
+            <p class="text-xl text-gray-600" style="font-family: Geeorgia;">Join us for these exciting upcoming activities</p>
+        </div>
+        
+        <!-- Event Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Event 1 -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-wheat rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-white font-bold text-lg">15</span>
+                    </div>
+                    <div>
+                        <p class="text-wheat font-medium" style="font-family: figtree;">March 2024</p>
+                        <h3 class="text-xl font-semibold text-charcoal" style="font-family: figtree;">Monthly Group Ride</h3>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4" style="font-family: Geeorgia;">Join us for our monthly group ride through the Barrington Hills Forest Preserve.</p>
+                <div class="text-sm text-gray-500" style="font-family: Geeorgia;">
+                    <p><strong>Time:</strong> 9:00 AM</p>
+                    <p><strong>Location:</strong> Forest Preserve Trailhead</p>
+                    <p><strong>Difficulty:</strong> Easy to Moderate</p>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-wheat rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-white font-bold text-lg">22</span>
+                    </div>
+                    <div>
+                        <p class="text-wheat font-medium" style="font-family: figtree;">March 2024</p>
+                        <h3 class="text-xl font-semibold text-charcoal" style="font-family: figtree;">Trail Safety Workshop</h3>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4" style="font-family: Geeorgia;">Learn essential safety practices for trail riding with our certified instructors.</p>
+                <div class="text-sm text-gray-500">
+                    <p><strong>Time:</strong> 2:00 PM</p>
+                    <p><strong>Location:</strong> Club Meeting Room</p>
+                    <p><strong>Cost:</strong> Free for members</p>
+                </div>
+            </div>
+            
+            <!-- Event 3 -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-warm-600 rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-white font-bold text-lg">5</span>
+                    </div>
+                    <div>
+                        <p class="text-warm-600 font-medium">April 2024</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Spring Trail Cleanup</h3>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Help maintain our favorite trails during our annual spring cleanup event.</p>
+                <div class="text-sm text-gray-500">
+                    <p><strong>Time:</strong> 8:00 AM</p>
+                    <p><strong>Location:</strong> Multiple trailheads</p>
+                    <p><strong>Volunteers:</strong> Needed</p>
+                </div>
+            </div>
+            
+            <!-- Event 4 -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-warm-600 rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-white font-bold text-lg">12</span>
+                    </div>
+                    <div>
+                        <p class="text-warm-600 font-medium">April 2024</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Beginner's Trail Ride</h3>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Perfect for new riders to gain confidence on easy trails with experienced guides.</p>
+                <div class="text-sm text-gray-500">
+                    <p><strong>Time:</strong> 10:00 AM</p>
+                    <p><strong>Location:</strong> Meadow Loop Trail</p>
+                    <p><strong>Skill Level:</strong> Beginner</p>
+                </div>
+            </div>
+            
+            <!-- Event 5 -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-warm-600 rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-white font-bold text-lg">19</span>
+                    </div>
+                    <div>
+                        <p class="text-warm-600 font-medium">April 2024</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Board Meeting</h3>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Monthly board meeting open to all members. Discuss club business and upcoming events.</p>
+                <div class="text-sm text-gray-500">
+                    <p><strong>Time:</strong> 7:00 PM</p>
+                    <p><strong>Location:</strong> Club Meeting Room</p>
+                    <p><strong>Open to:</strong> All members</p>
+                </div>
+            </div>
+            
+            <!-- Event 6 -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-warm-600 rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-white font-bold text-lg">26</span>
+                    </div>
+                    <div>
+                        <p class="text-warm-600 font-medium">April 2024</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Advanced Trail Challenge</h3>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">Challenge yourself on our most difficult trail with experienced riders.</p>
+                <div class="text-sm text-gray-500">
+                    <p><strong>Time:</strong> 8:00 AM</p>
+                    <p><strong>Location:</strong> Hill Country Challenge Trail</p>
+                    <p><strong>Skill Level:</strong> Advanced</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    {% endblock %}

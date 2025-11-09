@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Membership - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Join the Riding Club of Barrington Hills. Membership includes access to trails, events, and our welcoming community.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-warm-700 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-7">
+        <h1 class="text-4xl text-heading font-bold">MEMBERSHIP</h1>
+        <p class="text-xl mt-2 text-warm-100">Join our community of trail riding enthusiasts</p>
+    </div>
+</section>
+
+<!-- Membership Benefits -->
+<section class="py-16 bg-warm-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Join RCBH?</h2>
+            <p class="text-xl text-gray-600">Become part of our welcoming community and enjoy exclusive benefits</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Benefit 1 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Access Private Trails</h3>
+                <p class="text-gray-600">Ride through private member's only trail in co-operation with landowners</p>
+            </div>
+            
+            <!-- Benefit 2 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Exclusive Events</h3>
+                <p class="text-gray-600">Join member-only rides and social events</p>
+            </div>
+            
+            <!-- Benefit 3 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Community</h3>
+                <p class="text-gray-600">Connect with like-minded riders and build lasting friendships</p>
+            </div>
+            
+            <!-- Benefit 4 -->
+            <div class="text-center p-6 rounded-lg bg-warm-50">
+                <div class="w-16 h-16 bg-warm-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Education</h3>
+                <p class="text-gray-600">Access to safety workshops and riding skill development</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Membership Options -->
+<section class="py-16 bg-warm-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+            
+            <!-- Family Membership -->
+            <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-warm-600 relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span class="bg-warm-600 text-white px-4 py-2 rounded-full text-sm font-semibold">RCBH Membership</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Membership</h3>
+                <div class="text-3xl font-bold text-warm-600 mb-6">$150/year</div>
+                <ul class="space-y-3 text-gray-600 mb-8">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        The whole household can become members under one plan
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Special Invitation to New Members party
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Discounted event registration
+                    </li>
+                </ul>
+                <a href="{{ url_for('membership_join') }}" class="block text-center w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Join Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,308 @@
+/* Custom CSS for Riding Club of Barrington Hills */
+
+/* Warm color palette - inspired by nature and riding */
+:root {
+    --forest: #363D1A;
+    --sage: #9B9E8D;
+    --charcoal: #1C1C1C;
+    --brick: #941800;
+    --oat: #E1D3C2;
+    --wheat: #B28767;
+    --linen: #EDE7E4;
+    --white: #FFFFFF;
+
+    --warm-50: #D1E5F4;
+    --warm-100: #fdf7e8;
+    --warm-200: #faecc8;
+    --warm-300: #f6dda8;
+    --warm-400: #f1cc88;
+    --warm-500: #ebb868;
+    --warm-550: #E1D3C2;
+    --warm-600: #d4a657;
+    --warm-650: #9B9E8D;
+    --warm-700: #9B9E8D;
+    --warm-800: #9c8435;
+    --warm-850: #941800;
+    --warm-900: #807324;
+    --warm-950: #EDE7E4;
+}
+
+/* Apply warm colors to Tailwind classes */
+.bg-forest { background-color: var(--forest); }
+.bg-sage { background-color: var(--sage); }
+.bg-oat { background-color: var(--oat); }
+.bg-wheat { background-color: var(--wheat); }
+.bg-linen { background-color: var(--linen); }
+.bg-website { background-color: var(--white); }
+
+.bg-warm-50 { background-color: var(--warm-50); }
+.bg-warm-100 { background-color: var(--warm-100); }
+.bg-warm-200 { background-color: var(--warm-200); }
+.bg-warm-300 { background-color: var(--warm-300); }
+.bg-warm-400 { background-color: var(--warm-400); }
+.bg-warm-500 { background-color: var(--warm-500); }
+.bg-warm-550 { background-color: var(--warm-550); }
+.bg-warm-600 { background-color: var(--warm-600); }
+.bg-warm-650 { background-color: var(--warm-650); }
+.bg-warm-700 { background-color: var(--warm-700); }
+.bg-warm-800 { background-color: var(--warm-800); }
+.bg-warm-900 { background-color: var(--warm-900); }
+.bg-warm-950 { background-color: var(--warm-950); }
+
+.text-forest { color: var(--forest); }
+.text-sage { color: var(--sage); }
+.text-charcoal { color: var(--charcoal); }
+.text-brick { color: var(--brick); }
+.text-oat { color: var(--oat); }
+.text-wheat { color: var(--wheat); }
+.text-linen { color: var(--linen); }
+.text-heading { color: var(--charcoal); }
+
+.text-warm-50 { color: var(--warm-50); }
+.text-warm-100 { color: var(--warm-100); }
+.text-warm-200 { color: var(--warm-200); }
+.text-warm-300 { color: var(--warm-300); }
+.text-warm-400 { color: var(--warm-400); }
+.text-warm-500 { color: var(--warm-500); }
+.text-warm-550 { color: var(--warm-550); }
+.text-warm-600 { color: var(--warm-600); }
+.text-warm-700 { color: var(--warm-700); }
+.text-warm-800 { color: var(--warm-800); }
+.text-warm-850 { color: var(--warm-850); }
+.text-warm-900 { color: var(--warm-900); }
+
+.border-warm-500 { border-color: var(--warm-500); }
+.hover\:bg-warm-600:hover { background-color: var(--warm-600); }
+.hover\:bg-warm-700:hover { background-color: var(--warm-700); }
+.hover\:text-warm-200:hover { color: var(--warm-200); }
+.hover\:text-warm-800:hover { color: var(--warm-800); }
+
+/* Custom styles for better typography and spacing */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus {
+    outline: 2px solid var(--warm-500);
+    outline-offset: 2px;
+}
+
+/* Custom button styles */
+.btn-primary {
+    background-color: var(--warm-650);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--warm-700);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--warm-800);
+    border: 2px solid var(--warm-800);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--warm-800);
+    color: white;
+}
+
+/* Card styles */
+.card {
+    background: var(--oat);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar Styles */
+.calendar-grid {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.calendar-day-header {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #374151;
+    border-right: 1px solid #e5e7eb;
+}
+
+.calendar-day-header:last-child {
+    border-right: none;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+    min-height: 120px;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    position: relative;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.calendar-day:last-child {
+    border-right: none;
+}
+
+.calendar-day:hover {
+    background-color: #f9fafb;
+}
+
+.calendar-day.other-month {
+    background-color: #f9fafb;
+    color: #9ca3af;
+}
+
+.calendar-day.today {
+    background-color: #fef3c7;
+}
+
+.calendar-day.selected {
+    background-color: #dbeafe;
+}
+
+.calendar-day-number {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.calendar-events {
+    position: absolute;
+    top: 1.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    overflow-y: auto;
+}
+
+.calendar-event {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.125rem 0.25rem;
+    margin-bottom: 0.125rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calendar-event:hover {
+    background-color: #2563eb;
+}
+
+.calendar-event.wheat {
+    background-color: var(--wheat);
+}
+
+.calendar-event.wheat:hover {
+    background-color: var(--warm-600);
+}
+
+.calendar-event.sage {
+    background-color: var(--sage);
+}
+
+.calendar-event.sage:hover {
+    background-color: var(--warm-700);
+}
+
+.calendar-event.forest {
+    background-color: var(--forest);
+}
+
+.calendar-event.forest:hover {
+    background-color: var(--charcoal);
+}
+
+/* Modal animations */
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+    
+    .mobile-full {
+        width: 100%;
+    }
+    
+    .calendar-day {
+        min-height: 80px;
+        padding: 0.25rem;
+    }
+    
+    .calendar-day-number {
+        font-size: 0.875rem;
+    }
+    
+    .calendar-event {
+        font-size: 0.625rem;
+        padding: 0.0625rem 0.125rem;
+    }
+}

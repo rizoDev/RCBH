@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Riding Club of Barrington Hills{% endblock %}</title>
+    <meta name="description" content="{% block description %}Riding Club of Barrington Hills - Trail riding, events, and community{% endblock %}">
+    
+    <!-- Google Fonts - Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS v4 CDN (will be replaced with local build later) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <style>
+        /* smooth fade between tab content */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+      </style>    
+</head>
+<body class="bg-website text-forest">
+    <!-- Responsive Navigation with Sub-menus -->
+    <nav class="text-forest font-bold relative font-figtree bg-website" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top red lines -->
+            <div class="hidden md:flex items-center justify-between h-0.5 mt-6">
+                <div class="flex-1 h-0.5 bg-wheat"></div>
+                <div class="w-32 h-0.5 bg-transparent"></div>
+                <div class="flex-1 h-0.5 bg-wheat"></div>
+            </div>
+            
+            <div class="flex items-center justify-between h-16 py-2">
+                <!-- Left Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- About Us with Sub-menu -->
+                    <div class="relative group" role="menuitem">
+                        <button class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300 flex items-center"
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="about-menu">
+                            <a href="{{ url_for('about') }}" 
+                                class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300"
+                                aria-current="{% if request.endpoint == 'about' %}page{% endif %}">
+                                 ABOUT US
+                             </a>
+                            <svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="about-menu" 
+                             class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+                             role="menu"
+                             aria-labelledby="about-menu">
+                            <a href="{{ url_for('trails') }}" 
+                               class="block px-4 py-2 text-sm text-forest hover:bg-warm-100 hover:text-warm-800 transition duration-300"
+                               role="menuitem">TRAILS</a>
+                            <a href="{{ url_for('board') }}" 
+                               class="block px-4 py-2 text-sm text-forest hover:bg-warm-100 hover:text-warm-800 transition duration-300"
+                               role="menuitem">BOARD</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Calendar with Sub-menu -->
+                    <div class="relative group" role="menuitem">
+                        <button class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300 flex items-center"
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="calendar-menu">
+                            <a href="{{ url_for('calendar') }}" 
+                                class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300"
+                                aria-current="{% if request.endpoint == 'calendar' %}page{% endif %}">
+                                 CALENDAR
+                             </a>
+                            <svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="calendar-menu" 
+                             class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+                             role="menu"
+                             aria-labelledby="calendar-menu">
+                            <a href="{{ url_for('rcbhcalendar') }}" 
+                               class="block px-4 py-2 text-sm text-forest hover:bg-warm-100 hover:text-warm-800 transition duration-300"
+                               role="menuitem">RCBH CALENDAR</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Activities with Sub-menu -->
+                    <div class="relative group" role="menuitem">
+                        <button class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300 flex items-center"
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="activities-menu">
+                            ACTIVITIES
+                            <svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="activities-menu" 
+                             class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+                             role="menu"
+                             aria-labelledby="activities-menu">
+                            <a href="{{ url_for('events') }}" 
+                               class="block px-4 py-2 text-sm hover:bg-warm-100 hover:text-warm-800 transition duration-300"
+                               role="menuitem">EVENTS</a>
+                            <a href="{{ url_for('newsletter') }}" 
+                               class="block px-4 py-2 text-sm hover:bg-warm-100 hover:text-warm-800 transition duration-300"
+                               role="menuitem">NEWSLETTER</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Center Logo -->
+                <div class="flex items-center justify-center flex-1">
+                    <a href="{{ url_for('home') }}" class="flex items-center">
+                        <img src="{{ url_for('static', filename='images/RCBH_Logo_RGB_Full Logo.png') }}" 
+                             alt="RCBH Logo" class="h-20 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Right Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Membership -->
+                    <a href="{{ url_for('membership') }}" 
+                       class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300"
+                       aria-current="{% if request.endpoint == 'membership' %}page{% endif %}">
+                        MEMBERSHIP
+                    </a>
+                    
+                    <!-- Donations -->
+                    <a href="{{ url_for('donations') }}" 
+                       class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300"
+                       aria-current="{% if request.endpoint == 'donations' %}page{% endif %}">
+                        DONATIONS
+                    </a>
+
+                    <!-- Members -->
+                    <a href="{{ url_for('membersShow') }}" 
+                       class="hover:text-gray-600 px-3 py-2 rounded-md text-sm transition duration-300"
+                       aria-current="{% if request.endpoint == 'membersShow' %}page{% endif %}">
+                        MEMBERS
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" 
+                            class="text-green-900 hover:text-gray-600 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+                            aria-controls="mobile-menu"
+                            aria-expanded="false"
+                            aria-label="Toggle main menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1" style="background-color: #D1E5F4;">
+                    <!-- Mobile About Us -->
+                    <div>
+                        <button class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-green-900 hover:text-gray-600 hover:bg-gray-200 transition duration-300 flex items-center justify-between"
+                                aria-expanded="false"
+                                aria-controls="mobile-about-menu">
+                            ABOUT US
+                            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-about-menu" class="hidden pl-6">
+                            <a href="{{ url_for('trails') }}" 
+                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-900 hover:bg-gray-200 transition duration-300">
+                                TRAILS
+                            </a>
+                            <a href="{{ url_for('board') }}" 
+                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-900 hover:bg-gray-200 transition duration-300">
+                                BOARD
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Calendar -->
+                    <div>
+                        <button class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-green-900 hover:text-gray-600 hover:bg-gray-200 transition duration-300 flex items-center justify-between"
+                                aria-expanded="false"
+                                aria-controls="mobile-calendar-menu">
+                            CALENDAR
+                            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-calendar-menu" class="hidden pl-6">
+                            <a href="{{ url_for('calendar') }}" 
+                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-900 hover:bg-gray-200 transition duration-300">
+                                EVENTS
+                            </a>
+                            <a href="{{ url_for('rcbhcalendar') }}" 
+                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-900 hover:bg-gray-200 transition duration-300">
+                                RCBH CALENDAR
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Activities -->
+                    <div>
+                        <button class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-green-900 hover:text-gray-600 hover:bg-gray-200 transition duration-300 flex items-center justify-between"
+                                aria-expanded="false"
+                                aria-controls="mobile-activities-menu">
+                            ACTIVITIES
+                            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-activities-menu" class="hidden pl-6">
+                            <a href="{{ url_for('events') }}" 
+                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-900 hover:bg-gray-200 transition duration-300">
+                                EVENTS
+                            </a>
+                            <a href="{{ url_for('newsletter') }}" 
+                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-900 hover:bg-gray-200 transition duration-300">
+                                NEWSLETTER
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Membership -->
+                    <a href="{{ url_for('membership') }}" 
+                       class="block px-3 py-2 rounded-md text-base font-medium text-green-900 hover:text-gray-600 hover:bg-gray-200 transition duration-300"
+                       aria-current="{% if request.endpoint == 'membership' %}page{% endif %}">
+                        MEMBERSHIP
+                    </a>
+                    
+                    <!-- Mobile Donations -->
+                    <a href="{{ url_for('donations') }}" 
+                       class="block px-3 py-2 rounded-md text-base font-medium text-green-900 hover:text-gray-600 hover:bg-gray-200 transition duration-300"
+                       aria-current="{% if request.endpoint == 'donations' %}page{% endif %}">
+                        DONATIONS
+                    </a>
+                    
+                    <!-- Mobile Members -->
+                    <a href="{{ url_for('membersShow') }}" 
+                       class="block px-3 py-2 rounded-md text-base font-medium text-green-900 hover:text-gray-600 hover:bg-gray-200 transition duration-300"
+                       aria-current="{% if request.endpoint == 'membersShow' %}page{% endif %}">
+                        MEMBERS
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Bottom red lines -->
+            <div class="hidden md:flex items-center justify-between h-0.5 mb-4">
+                <div class="flex-1 h-0.5 bg-wheat"></div>
+                <div class="w-32 h-0.5 bg-transparent"></div>
+                <div class="flex-1 h-0.5 bg-wheat"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sage text-white py-2 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6">
+            <div class="text-center" style="font-family: Lora;">
+                <p>(C) 2025 Riding Club of Barrington Hills, maintained by tkh.com, All Rights Reserved </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Welcome to the Riding Club of Barrington Hills. Join our community for trail riding, events, and outdoor adventures.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+
+<section class="bg-sage  bg-gradient-to-r from-warm-600 to-warm-800 text-white py-20 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-1 opacity-60">
+        <div class="absolute inset-1" style="background-image: url('static/images/AI_HorseRiders_G.png')"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Riding Club of Barrington Hills</h1>
+        <p class="text-xl md:text-2xl mb-8 text-warm-100 max-w-3xl mx-auto">
+            Building community through trail riding and outdoor adventure. Join the 200 members 
+            exploring the beautiful trails of Barrington Hills and beyond.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="{{ url_for('membership') }}" style="font-family: figtree;"
+            class="border-2 border-white hover:bg-white hover:text-warm-800 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                Join Our Community
+            </a>
+            <a href="{{ url_for('calendar') }}" style="font-family: figtree;"
+               class="border-2 border-white hover:bg-white hover:text-warm-800 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                View Events
+            </a>
+        </div>
+        
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
+            <div class="text-center">
+                <div class="text-3xl md:text-4xl font-bold text-white">191</div>
+                <div class="text-warm-100">Active Members</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl md:text-4xl font-bold text-white">150 Miles</div>
+                <div class="text-warm-100">Trails</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl md:text-4xl font-bold text-white">30+</div>
+                <div class="text-warm-100">Events/Year</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl md:text-4xl font-bold text-white">88+</div>
+                <div class="text-warm-100">Years Active</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl md:text-4xl font-bold text-white">325</div>
+                <div class="text-warm-100">Trail Owners</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-website">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl text-charcoal font-bold mb-4" style="font-family: figtree;">What We Offer</h2>
+            <p class="text-xl text-gray-600" style="font-family: Georgia;">Join us for amazing trail riding experiences and community events</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Trail Riding -->
+            <div class="text-center p-8 rounded-lg bg-oat hover:shadow-lg transition duration-300">
+                <div class="w-20 h-20 bg-wheat rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl text-forest font-semibold mb-4" style="font-family: figtree;">Trail Riding</h3>
+                <p class="text-gray-600 mb-4" style="font-family: Georgia;">Explore beautiful trails throughout Barrington Hills and surrounding areas with experienced guides</p>
+                <a href="{{ url_for('trails') }}" class="text-wheat hover:text-warm-700 font-medium">Learn More →</a>
+            </div>
+            
+            <!-- Community Events -->
+            <div class="text-center p-8 rounded-lg bg-oat hover:shadow-lg transition duration-300">
+                <div class="w-20 h-20 bg-wheat rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl text-forest font-semibold mb-4" style="font-family: figtree;">Community Events</h3>
+                <p class="text-gray-600 mb-4" style="font-family: Georgia;">Join us for social gatherings, educational workshops, and fun activities throughout the year</p>
+                <a href="{{ url_for('events') }}" class="text-wheat hover:text-warm-700 font-medium">View Events →</a>
+            </div>
+            
+            <!-- Membership -->
+            <div class="text-center p-8 rounded-lg bg-oat hover:shadow-lg transition duration-300">
+                <div class="w-20 h-20 bg-wheat rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl text-forest font-semibold mb-4" style="font-family: figtree;">Membership</h3>
+                <p class="text-gray-600 mb-4" style="font-family: Georgia;">Become part of our welcoming community of riders and outdoor enthusiasts</p>
+                <a href="{{ url_for('membership') }}" class="text-wheat hover:text-warm-700 font-medium">Join Today →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Recent News -->
+<section class="py-16 bg-website">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-charcoal mb-4" style="font-family: figtree;">Latest News & Updates</h2>
+            <p class="text-xl text-gray-600" style="font-family: Georgia;">Stay informed about club activities and trail conditions</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- News Item 1 -->
+            <article class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-wheat text-sm font-medium mb-2">March 15, 2024</div>
+                <h3 class="text-xl font-semibold text-charcoal mb-3" style="font-family: figtree;">Spring Trail Maintenance Complete</h3>
+                <p class="text-gray-600 mb-4" style="font-family: Georgia;">
+                    Our volunteer trail maintenance crew has completed the spring cleanup on all major trails. 
+                    Trails are now ready for the busy riding season ahead.
+                </p>
+                <a href="{{ url_for('newsletter') }}" class="text-wheat hover:text-warm-700 font-medium">Read More →</a>
+            </article>
+            
+            <!-- News Item 2 -->
+            <article class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-wheat text-sm font-medium mb-2">March 10, 2024</div>
+                <h3 class="text-xl font-semibold text-charcoal mb-3" style="font-family: figtree;">New Member Welcome Event</h3>
+                <p class="text-gray-600 mb-4" style="font-family: Georgia;">
+                    Join us on March 25th for our quarterly new member welcome event. Meet fellow riders, 
+                    learn about club activities, and enjoy a guided trail ride.
+                </p>
+                <a href="{{ url_for('events') }}" class="text-wheat hover:text-warm-700 font-medium">Learn More →</a>
+            </article>
+            
+            <!-- News Item 3 -->
+            <article class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-wheat text-sm font-medium mb-2">March 5, 2024</div>
+                <h3 class="text-xl font-semibold text-charcoal mb-3" style="font-family: figtree;">Trail Safety Workshop Scheduled</h3>
+                <p class="text-gray-600 mb-4" style="font-family: Georgia;">
+                    Our annual trail safety workshop is scheduled for April 2nd. Learn essential safety 
+                    practices, emergency procedures, and trail etiquette from certified instructors.
+                </p>
+                <a href="{{ url_for('events') }}" class="text-wheat hover:text-warm-700 font-medium">Register Now →</a>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}

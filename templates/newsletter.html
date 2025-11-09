@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Newsletter - Riding Club of Barrington Hills{% endblock %}
+
+{% block description %}Stay updated with the latest news, events, and trail information from the Riding Club of Barrington Hills.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-warm-700 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl text-heading font-bold">NEWSLETTER</h1>
+        <p class="text-xl mt-4 text-warm-100">Stay connected with club news and updates</p>
+    </div>
+</section>
+
+<!-- Newsletter Content -->
+<section class="py-16 bg-warm-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Latest Newsletter -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Latest Newsletter</h2>
+                <div class="bg-warm-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">March 2024 - Spring Trail Update</h3>
+                    <div class="space-y-4 text-gray-600">
+                        <p>Welcome to spring! Our trails are ready for the new season with several improvements and maintenance updates.</p>
+                        <p>This month's highlights include:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>New trail markers installed on Meadow Loop</li>
+                            <li>Bridge repairs completed on River Trail</li>
+                            <li>Upcoming spring cleanup event on April 5th</li>
+                            <li>New member welcome event scheduled</li>
+                        </ul>
+                        <p>We're excited to see everyone back on the trails as the weather improves!</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-warm-200">
+                        <p class="text-sm text-gray-500">Published: March 1, 2024</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Archive -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Newsletter Archive</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-warm-600 pl-6 py-4">
+                        <h4 class="text-lg font-semibold text-gray-900">February 2024</h4>
+                        <p class="text-gray-600">Winter trail conditions and safety reminders</p>
+                    </div>
+                    <div class="border-l-4 border-warm-600 pl-6 py-4">
+                        <h4 class="text-lg font-semibold text-gray-900">January 2024</h4>
+                        <p class="text-gray-600">New year resolutions and upcoming events</p>
+                    </div>
+                    <div class="border-l-4 border-warm-600 pl-6 py-4">
+                        <h4 class="text-lg font-semibold text-gray-900">December 2023</h4>
+                        <p class="text-gray-600">Holiday celebration and year-end recap</p>
+                    </div>
+                    <div class="border-l-4 border-warm-600 pl-6 py-4">
+                        <h4 class="text-lg font-semibold text-gray-900">November 2023</h4>
+                        <p class="text-gray-600">Fall trail maintenance and member spotlight</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="py-16 bg-warm-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
+        <p class="text-xl text-gray-600 mb-8">Subscribe to our newsletter for the latest club news and events</p>
+        
+        <div class="max-w-md mx-auto">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6">Newsletter Signup</h3>
+                <form class="space-y-4">
+                    <div>
+                        <input type="email" placeholder="Your email address" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-warm-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Your name" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-warm-500 focus:border-transparent">
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-warm-600 hover:bg-warm-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="text-sm text-gray-500 mt-4">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
